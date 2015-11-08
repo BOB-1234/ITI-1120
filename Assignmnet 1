@@ -1,0 +1,252 @@
+#Family name: 007
+# Student number: 1234567
+# Course: ITI 1120
+# Assignment Number 1
+
+###########################################################################
+
+###########################################################################
+
+# Question 1:
+
+def f2k(t):
+    ''' (number)->number
+    Returns temperature from fahrenheit to kelvins
+    '''
+    kelvins = (t + 459.67) * 5/9
+    return kelvins
+###########################################################################
+
+###########################################################################
+
+# Question 2:
+
+def bibformat_apa(author,title,city,publisher,year):
+    ''' (string,string,string,string,number)->string,string,string,string,number
+    Returns function which returns a string in a form
+    '''
+    bibit = ('' + str(author) + '(' + str(year) + ').' + str(title) + '.' + str(city) + ':' + str(publisher) + '.')
+    return bibit
+ 
+############################################################################
+
+############################################################################
+
+# Question 3:
+
+def joker():
+    ''' (none)-> none
+    Prints a joke with a question and asnswers it as it puts your name in the beginning
+    '''
+    name = input ("Insert your name")
+    joke = (name + ", Question: Why did the the belt get locked up?      Answer: He held up a pair of pants.")
+    print (joke)
+            
+############################################################################
+
+############################################################################
+
+# Question 4:
+
+def bibformat_apa_display():
+    ''' (none)-> none
+    Returns a function as author, year of publication, publisher and the headquarter city of the publisher
+    '''
+    title = input ("Enter the title of a book: ")
+    author = input ("Enter the name of the author? ")
+    year = input ("What year was the book published?")
+    city = input ("Enter the name of the publisher: ")
+    publisher = input ("In what city are the headquarters of the publisher?")
+    bibit = ( author + '(' + str(year) + ').' + title + '.' + city + ':' + publisher + "." )
+    return bibit
+
+############################################################################
+
+############################################################################
+ 
+# Question 5:
+
+def bmi(w,h):
+    ''' (number,number)-> number
+    Returns body mass index using weights in (pounds) is w, heights in (inches) is h
+    '''
+    Result = ((w/(h**2))*703)
+    return Result
+
+############################################################################
+
+############################################################################
+
+# Question 6:
+
+
+def f2fi(f):
+    ''' (number,number)->number
+    Returns a function as pair of numbers fh as an integer i is a non negative number smaller than 12
+
+    '''
+    print("("+str(int(f))+", "+str(12*(f-int(f)))+")")
+
+
+############################################################################
+
+############################################################################
+
+# Question 7:
+
+def bmi_calculator():
+    ''' (none)->none
+    Returns a personalized bmi calculator in a form of a function. Prints appelation,first name,last name,height in inches,weight in pounds,prints message of the form
+    '''
+    appelation = input ("Enter your appelation (Mr., Mrs., Dr.,...): ")
+    first_name = input ("Enter your first name: ")
+    last_name = input ("Enter your last name: ")
+    height_in_inches = input ("Enter your height in inches:")
+    height_feet = int (height_in_inches)//12
+    height_inches = int (height_in_inches) - (height_feet*12)
+    weight_in_pounds = input ("Enter your weight in pounds: ")
+    message_of_the_form = input ("BMI Record for ")
+    Result = ((int (weight_in_pounds)/ (int(height_in_inches)**2))*703)
+    BMI_Record_For = ("BMI Record for " + appelation + " " + first_name + " " + last_name + " :\n Subject is " + str(height_feet) + " feet " + str(height_inches) + " inches tall and weighs " +
+                      str(weight_in_pounds) + " pounds. \n The subject's BMI is " + str(Result) + ".")
+    print (BMI_Record_For)
+
+##############################################################################
+
+##############################################################################
+
+# Question 8:
+
+import turtle 
+''' (None)->None
+Draws a basketball court using lines with turtle graphics
+'''
+s=turtle.Screen() 
+t=turtle.Turtle()  
+t.speed(10)
+   
+t.color("turquoise")
+t.pensize(4)
+t.begin_fill()
+ 
+t.penup()
+t.goto(-300,-200)
+t.pendown()
+t.left(90)
+t.forward(400)
+t.left(270)
+t.forward(600)
+t.left(270)
+t.forward(400)
+t.left(630)
+t.forward(600)
+t.penup()
+t.goto(-300,180)
+t.pendown()
+    
+t.color("black")
+t.end_fill()
+t.color("turquoise")
+  
+t.circle(180,-180)
+t.penup()
+t.goto(-300,50)
+t.pendown()
+t.left(360)
+t.forward(140)
+t.left(270)
+t.forward(100)
+t.left(270)
+t.forward(140)
+t.penup()
+t.goto(-300,40)
+t.pendown()
+t.left(540)
+t.forward(140)
+t.circle(-40,180)
+t.left(720)
+t.forward(140)
+t.penup()
+t.goto(300,180)
+t.pendown()
+t.circle(180,180)
+t.penup()
+t.goto(300,50)
+t.pendown()
+t.left(540)
+t.forward(140)
+t.left(270)
+t.forward(-100)
+t.left(270)
+t.forward(140)
+t.penup()
+t.goto(300,40)
+t.pendown()
+t.left(540)
+t.forward(140)
+t.circle(40,180)
+t.left(720)
+t.forward(140)
+t.penup()
+t.goto(0,-200)
+t.pendown()
+t.left(90)
+t.forward(400)
+t.penup()
+t.goto(0,50)
+t.pendown()
+t.left(90)
+t.circle(50,180)
+t.circle(50,180)
+t.penup()
+t.goto(-280,10)
+t.pendown()
+t.left(90)
+t.forward(20)
+t.left(180)
+t.forward(10)
+t.circle(-5,360)
+t.penup()
+t.goto(280,10)
+t.pendown()
+t.left(540)
+t.forward(20)
+t.left(180)
+t.forward(10)
+t.circle(5,360)
+t.penup()
+t.goto(0,500)
+###############################################################################
+
+###############################################################################
+
+# Question 9:
+
+def forms_triangle(x, y, z):
+    ''' (number, number, number)-> number
+    Returns a function three line segments of lenght x, y, z can form a trinagle if its true if not its false 
+    '''
+    return x+y>z and x+z>y and y+z>x
+
+###############################################################################
+
+###############################################################################
+    
+# Question 10:
+
+def change_to_coins(amount):
+    ''' (number)-> number
+    Returns the minimum number of coins that add up to the inputed amount.
+    '''
+    amounts = amount * 100
+    quarter = amounts // 25
+    left_over_1 = amounts - (25 * quarter)
+    dime = round (left_over_1 //10)
+    left_over_2 = round (left_over_1) - (10*dime)
+    nickel = left_over_2 //5
+    cents = left_over_2 - (5*nickel)
+    add = quarter + dime + nickel + cents
+    return add
+
+###############################################################################
+
