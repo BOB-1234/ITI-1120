@@ -1,0 +1,174 @@
+#Blah Blah
+#ITI 1120
+#1234567
+#Assignment 2
+
+#Part 2
+##########################################
+# Question 1 #
+##########################################
+
+def in_or_out_square(x,y, length, query_x, query_y):
+    """
+    (number, number, number, number, number)-> str
+    Return a string indicating whether the point (query_x, query_y) is contained in the square with lower-left bound at
+    (x, y) of length "length".
+    Precondition: length must be a positive number.
+    """
+    if length < 0:
+        return "invalid side length"
+    elif (query_x >= x and query_x <= x+length) and (query_y >= y and query_y <= y+length):
+        return "the given query point (" + str(query_x) + ", " + str(query_y) + ") is inside of the square."
+    else:
+        return "the given query point (" + str(query_x) + ", " + str(query_y) + ") is outside of the square."
+
+##########################################
+# Question 2 #
+##########################################
+
+def factorial(n):
+    """
+    (int)->intReturn the factorial of n (n!)
+    Precondition: n is non-negative.
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+##########################################
+# Question 3 #
+##########################################
+
+def strange_count(s):
+    """
+    (str)-> None
+    Print the number of characters in s that are between 'b' and 's' and '3' and '7',
+    inclusively.
+    """
+    count = 0
+    for w in s:
+        if (ord(w) in range(ord('b'), ord('t'))) or (ord(w) in range(ord('3'), ord('8'))):
+            count += 1
+    print(str(count))
+
+##########################################
+# Question 4 #
+##########################################
+
+def vote_percentage(results):
+    """
+    (str)-> number
+    Count the occurrences of 'yes' and 'no' in results and return the percentage of 'yes' votes.
+    Precondition: There must be at least one 'yes' or 'no' string.
+    """
+    yes_votes = results.count('yes')
+    no_votes = results.count('no')
+    total_votes = yes_votes + no_votes
+    return yes_votes/total_votes
+
+#########################################
+# Question 5 #
+#########################################
+
+def vote():
+    """
+    (None)-> None
+    Prompt user for a string containing all "yes", "no", and "abstained" votes, then print the result of the vote.
+    Abstains are not counted.
+    """
+    result = vote_percentage(input("Enter the yes, no, and abstained votes one by one and then press enter: "))
+    if result == 1:
+        print("Proposal passes unanimously.")
+    elif result >= (2/3):
+        print("Proposal passes with super majority.")
+    elif result >= (1/2):
+        print("Proposal passes with simple majority.")
+    else:
+        print("Proposal fails.")
+
+#########################################
+# Question 6 #
+#########################################
+
+def roman():
+    """
+    (None)-> int
+    Return the decimal representation of the inputted Roman numeral.
+    """
+    num = input("Enter a Roman number using capital letters M, D, C, X, V, and I: ")
+    return (num.count("M") * 1000) + (num.count("D") * 500) + (num.count("C") * 100) + \
+           num.count("X") * 10 + (num.count("V") * 5) + (num.count("I"))
+
+##########################################          
+# Question 7 #
+##########################################
+
+def roman_v2():
+    """
+    (None)-> int
+    Return the decimal representation of the inputted Roman numeral.
+    """
+    roman_number = input("Enter a Roman number using capital letters M, D, C, X, V, and I: ")
+    result = 0
+    for d in roman_number:
+        if d == "M":
+            result += 1000
+        elif d == "D":
+            result += 500
+        elif d == "C":
+            result += 100
+        elif d == "X":
+            result += 10
+        elif d == "V":
+            result += 5
+        elif d == "I":
+            result += 1
+    return result 
+
+##########################################        
+# Question 8 #
+##########################################
+
+def emphasize(s):
+    """
+    (str)-> str
+    Return string s with spaces inserted between adjacent letters.
+    >>> emphasize("very important")
+    'v e r y   i m p o r t a n t'
+    >>> emphasize(" very important ")
+    '  v e r y i m p o r t a n t '
+    >>> emphasize('v')
+    'v'
+    """
+    result = ''
+    for i in range(len(s)):
+        if i == len(s)-1:
+            result += s[i]
+            break
+        result += s[i] + ' '
+    return result
+
+###########################################
+# Question 9 #
+###########################################
+
+def crypto(s):
+    """(str)-> str
+    Swap each adjacent character in s and return the result.
+    """
+    result = ""
+    for i in range(1, len(s),2):
+        result += s[i] + s[i-1]
+    if len(s) % 2 == 1:
+        result += s[-1]
+    return result
+
+    
+    
+    
+
+    
+
+
+
